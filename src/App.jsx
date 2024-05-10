@@ -19,6 +19,15 @@ function App(props) {
   console.log("a.detail.race", a.detail.race); // puppy
   console.log("b.detail.race", b.detail.race); // puppy
 
+  // 깊은 복사(deep copy)
+  // 얕은 복사를 여러번 사용하여 해결
+  const { ...c } = a; // shallow copy
+  const { ...detail1 } = a.detail; // shallow copy
+  c.detail = detail1; // deep copy
+  c.detail.type = "pome";
+  console.log("a.detail.type", a.detail.type);
+  console.log("c.detail.type", c.detail.type);
+
   return <div></div>;
 }
 
