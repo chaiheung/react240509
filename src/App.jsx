@@ -28,6 +28,27 @@ function App(props) {
   console.log("a.detail.type", a.detail.type);
   console.log("c.detail.type", c.detail.type);
 
+  // 연습
+  const d = {
+    company: {
+      name: "apple",
+      location: "us",
+    },
+    name: "iphone",
+    price: 300,
+  };
+
+  const { ...e } = d;
+  const { ...company } = d.company;
+  e.company = company; // deep copy
+
+  e.name = "galaxy";
+  e.company.name = "samsung";
+
+  console.log("d.name", d.name); // iphone
+  console.log("d.company.name", d.company.name); // apple
+  console.log("e.name", e.name); // galaxy
+  console.log("e.company.name", e.company.name); // samsung
   return <div></div>;
 }
 
