@@ -11,6 +11,10 @@ function App(props) {
   const action2 = function () {
     console.log("이름 없는 함수 @@@@@");
   };
+
+  // arrow function
+  const action3 = () => console.log("anonymous action $$$$$");
+
   return (
     <div>
       <button onClick={action1}>클릭!</button>
@@ -24,6 +28,10 @@ function App(props) {
       >
         클릭#
       </button>
+      <br />
+      <button onClick={action3}>클릭$</button>
+      <br />
+      <button onClick={() => console.log("arrow function %%%%%")}>클릭%</button>
     </div>
   );
 }
