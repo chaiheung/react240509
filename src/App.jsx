@@ -1,7 +1,17 @@
 import React from "react";
+import { Badge, Button, ChakraProvider } from "@chakra-ui/react";
 
 function App(props) {
-  return <div></div>;
+  return (
+    <div>
+      <ChakraProvider>
+        <Button colorScheme={"blue"}>클릭</Button>
+        <Button colorScheme={"green"}>
+          알림 <Badge>new</Badge>
+        </Button>
+      </ChakraProvider>
+    </div>
+  );
 }
 
 export default App;
