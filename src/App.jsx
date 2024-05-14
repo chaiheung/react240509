@@ -13,10 +13,19 @@ function MyComp() {
   useEffect(() => {
     console.log("useEffect");
   });
+
   // 두번째 파라미터에 빈 배열을 넣으면 initial rendering 때만 실행됨
   useEffect(() => {
-    console.log("useEffect - initial rendering");
+    console.log("첫 렌더링 때 실행");
   }, []);
+
+  // 첫번째 파라미터의 리턴은 unmount 될 때 실행
+  useEffect(() => {
+    return () => {
+      console.log("언마운트 될 때 실행");
+    };
+  }, []);
+
   const [count, setCount] = useState(0);
   return (
     <div>
