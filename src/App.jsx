@@ -36,6 +36,24 @@ function App(props) {
     axios.post("/api/someurl3", params);
   }
 
+  function handleClickButton7() {
+    const data = new URLSearchParams();
+    data.append("address", "신촌");
+    data.append("birthDate", "2000-01-01");
+    data.append("inserted", "1999-12-12T13:12:11");
+
+    axios.get(`/api/someurl4?${data}`);
+  }
+
+  function handleClickButton8() {
+    const params = new URLSearchParams();
+    params.append("foods", "pizza");
+    params.append("foods", "coffee");
+    params.append("item", "iphone");
+
+    axios.post("/api/someurl4", params);
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -46,6 +64,9 @@ function App(props) {
       <hr />
       <button onClick={handleClickButton5}>get 요청 with qs</button>
       <button onClick={handleClickButton6}>post 요청 with data</button>
+      <hr />
+      <button onClick={handleClickButton7}>get 요청 with data 연습</button>
+      <button onClick={handleClickButton8}>post 요청 with data 연습</button>
     </div>
   );
 }
