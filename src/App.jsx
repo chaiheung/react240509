@@ -28,6 +28,14 @@ function App(props) {
     axios.get(`/api/someurl3?${params}`);
   }
 
+  function handleClickButton6() {
+    const params = new URLSearchParams();
+    params.append("id", "02");
+    params.append("city", "seoul");
+    params.append("country", "korea");
+    axios.post("/api/someurl3", params);
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -37,6 +45,7 @@ function App(props) {
       <button onClick={handleClickButton4}>post 요청 연습</button>
       <hr />
       <button onClick={handleClickButton5}>get 요청 with qs</button>
+      <button onClick={handleClickButton6}>post 요청 with data</button>
     </div>
   );
 }
