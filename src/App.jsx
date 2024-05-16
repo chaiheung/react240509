@@ -12,10 +12,21 @@ function App(props) {
     axios.post("/api/someurl");
   }
 
+  function handleClickButtonPrac1() {
+    axios.get("/api/someurl2");
+  }
+
+  function handleClickButtonPrac2() {
+    axios.post("/api/someurl2");
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
       <button onClick={handleClickButton2}>post 요청</button>
+      <hr />
+      <button onClick={handleClickButtonPrac1}>get 요청 연습</button>
+      <button onClick={handleClickButtonPrac2}>post 요청 연습</button>
     </div>
   );
 }
